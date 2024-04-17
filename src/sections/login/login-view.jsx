@@ -19,6 +19,7 @@ import { bgGradient } from 'src/theme/css';
 
 import Logo from 'src/components/logo';
 import Iconify from 'src/components/iconify';
+import { ConnectWallet } from '@thirdweb-dev/react';
 
 // ----------------------------------------------------------------------
 
@@ -55,11 +56,10 @@ export default function LoginView() {
       </Stack>
 
       <Stack direction="row" alignItems="center" justifyContent="flex-end" sx={{ my: 3 }}>
-        <Link variant="subtitle2" underline="hover">
-          Forgot password?
-        </Link>
+      
+      
       </Stack>
-
+      
       <LoadingButton
         fullWidth
         size="large"
@@ -70,6 +70,11 @@ export default function LoginView() {
       >
         Login
       </LoadingButton>
+
+<br></br>
+<br></br>
+    <center> <ConnectWallet /></center> 
+
     </>
   );
 
@@ -99,13 +104,10 @@ export default function LoginView() {
             maxWidth: 420,
           }}
         >
-          <Typography variant="h4">Sign in to Minimal</Typography>
+          <Typography variant="h4">Registrarse</Typography>
 
           <Typography variant="body2" sx={{ mt: 2, mb: 5 }}>
-            Don’t have an account?
-            <Link variant="subtitle2" sx={{ ml: 0.5 }}>
-              Get started
-            </Link>
+        
           </Typography>
 
           <Stack direction="row" spacing={2}>
@@ -142,7 +144,7 @@ export default function LoginView() {
 
           <Divider sx={{ my: 3 }}>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              OR
+              O
             </Typography>
           </Divider>
 

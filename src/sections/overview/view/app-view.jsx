@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import Iconify from 'src/components/iconify';
 
+import { Web3Button } from '@thirdweb-dev/react';
 import AppTasks from '../app-tasks';
 import AppNewsUpdate from '../app-news-update';
 import AppOrderTimeline from '../app-order-timeline';
@@ -15,6 +16,7 @@ import AppWidgetSummary from '../app-widget-summary';
 import AppTrafficBySite from '../app-traffic-by-site';
 import AppCurrentSubject from '../app-current-subject';
 import AppConversionRates from '../app-conversion-rates';
+import { Box, Card, Stack, TextField } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -22,50 +24,112 @@ export default function AppView() {
   return (
     <Container maxWidth="xl">
       <Typography variant="h4" sx={{ mb: 5 }}>
-        Hi, Welcome back 👋
+        Bienvenido inversor semilla de Cocay    👋
       </Typography>
 
       <Grid container spacing={3}>
-        <Grid xs={12} sm={6} md={3}>
+        <Grid xs={12} sm={6} md={6}>
           <AppWidgetSummary
-            title="Weekly Sales"
+            title="Cantidad de tokens vendidos"
             total={714000}
             color="success"
             icon={<img alt="icon" src="/assets/icons/glass/ic_glass_bag.png" />}
           />
         </Grid>
 
-        <Grid xs={12} sm={6} md={3}>
+        <Grid xs={12} sm={6} md={6}>
           <AppWidgetSummary
-            title="New Users"
-            total={1352831}
+            title="Inversión"
+            total={150000}
             color="info"
             icon={<img alt="icon" src="/assets/icons/glass/ic_glass_users.png" />}
           />
         </Grid>
 
-        <Grid xs={12} sm={6} md={3}>
-          <AppWidgetSummary
-            title="Item Orders"
-            total={1723315}
-            color="warning"
-            icon={<img alt="icon" src="/assets/icons/glass/ic_glass_buy.png" />}
-          />
+
+
+        <Grid xs={12} sm={6} md={6}>
+        <Card
+      spacing={3}
+      direction="row"
+      sx={{
+        px: 3,
+        py: 5,
+        borderRadius: 2,
+      }}
+    >
+      <Box sx={{ width: 64, height: 64 }}><img alt="icon" src="/assets/icons/glass/ic_glass_users.png" /></Box>
+
+      <Stack spacing={0.5}>
+        <Typography variant="h4">Crear codigo de referidos</Typography>
+
+        <Typography variant="subtitle2" sx={{ color: 'text.disabled' }}>
+        <TextField name="email" label="Codigo" />
+        <TextField name="email" label="Wallet" />
+        <TextField name="email" label="Porcentaje a compartir" />
+        <br></br>
+        <Web3Button
+          //  contractAddress="0x0cda7c31216405d997479f3e0219a5d9f3d9909c"
+          contractAddress="0x0e07D1e7495aE9ACBf51CD960459127131C94898"
+          contractAbi={[]}
+          action={async (contract) => {
+                await contract.call("buyMembership", ["", "0x0000000000000000000000000000000000000123"])
+
+          }}
+          onSuccess={(result) => alert("Success!")}
+          onError={(error) => alert(`Error --> ${error.message}`)}
+          className="buyMembershipClass"
+        >
+          Crear
+        </Web3Button>
+        </Typography>
+      </Stack>
+    </Card>
         </Grid>
 
-        <Grid xs={12} sm={6} md={3}>
-          <AppWidgetSummary
-            title="Bug Reports"
-            total={234}
-            color="error"
-            icon={<img alt="icon" src="/assets/icons/glass/ic_glass_message.png" />}
-          />
+        <Grid xs={12} sm={6} md={6}>
+        <Card
+      spacing={3}
+      direction="row"
+      sx={{
+        px: 3,
+        py: 5,
+        borderRadius: 2,
+      }}
+    >
+      <Box sx={{ width: 64, height: 64 }}><img alt="icon" src="/assets/icons/glass/ic_glass_users.png" /></Box>
+
+      <Stack spacing={0.5}>
+        <Typography variant="h4">Comprar token Cocay</Typography>
+
+        <Typography variant="subtitle2" sx={{ color: 'text.disabled' }}>
+        <TextField name="email" label="Cantidad" />
+        <TextField name="email" label="Codigo referido" />
+        <br></br>
+        <Web3Button
+          //  contractAddress="0x0cda7c31216405d997479f3e0219a5d9f3d9909c"
+          contractAddress="0x0e07D1e7495aE9ACBf51CD960459127131C94898"
+          contractAbi={[]}
+          action={async (contract) => {
+                await contract.call("buyMembership", ["", "0x0000000000000000000000000000000000000123"])
+
+          }}
+          onSuccess={(result) => alert("Success!")}
+          onError={(error) => alert(`Error --> ${error.message}`)}
+          className="buyMembershipClass"
+        >
+          Comprar
+        </Web3Button>
+        </Typography>
+      </Stack>
+    </Card>
         </Grid>
+     
 
         <Grid xs={12} md={6} lg={8}>
           <AppWebsiteVisits
-            title="Website Visits"
-            subheader="(+43%) than last year"
+            title="Compras en los ultimos meses"
+            subheader=""
             chart={{
               labels: [
                 '01/01/2003',
@@ -81,20 +145,15 @@ export default function AppView() {
                 '11/01/2003',
               ],
               series: [
+              
                 {
-                  name: 'Team A',
-                  type: 'column',
-                  fill: 'solid',
-                  data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
-                },
-                {
-                  name: 'Team B',
+                  name: 'Compras',
                   type: 'area',
                   fill: 'gradient',
                   data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
                 },
                 {
-                  name: 'Team C',
+                  name: 'Ventas',
                   type: 'line',
                   fill: 'solid',
                   data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
@@ -106,19 +165,19 @@ export default function AppView() {
 
         <Grid xs={12} md={6} lg={4}>
           <AppCurrentVisits
-            title="Current Visits"
+            title="Tipo de compradores"
             chart={{
               series: [
-                { label: 'America', value: 4344 },
-                { label: 'Asia', value: 5435 },
-                { label: 'Europe', value: 1443 },
-                { label: 'Africa', value: 4443 },
+                { label: 'Menores a 1000usd', value: 70 },
+                { label: 'Menores a 12000usd', value: 20 },
+                { label: 'Menores a 50000usd', value: 8 },
+                { label: 'Menores a 100000', value: 2 },
               ],
             }}
           />
         </Grid>
 
-        <Grid xs={12} md={6} lg={8}>
+       {/* <Grid xs={12} md={6} lg={8}>
           <AppConversionRates
             title="Conversion Rates"
             subheader="(+43%) than last year"
@@ -184,9 +243,24 @@ export default function AppView() {
           />
         </Grid>
 
+
+
+             <Grid xs={12} md={6} lg={8}>
+          <AppTasks
+            title="Tasks"
+            list={[
+              { id: '1', name: 'Create FireStone Logo' },
+              { id: '2', name: 'Add SCSS and JS files if required' },
+              { id: '3', name: 'Stakeholder Meeting' },
+              { id: '4', name: 'Scoping & Estimations' },
+              { id: '5', name: 'Sprint Showcase' },
+            ]}
+          />
+        </Grid>
+          */}
         <Grid xs={12} md={6} lg={4}>
           <AppTrafficBySite
-            title="Traffic by Site"
+            title="Trafico en los sitios"
             list={[
               {
                 name: 'FaceBook',
@@ -212,18 +286,7 @@ export default function AppView() {
           />
         </Grid>
 
-        <Grid xs={12} md={6} lg={8}>
-          <AppTasks
-            title="Tasks"
-            list={[
-              { id: '1', name: 'Create FireStone Logo' },
-              { id: '2', name: 'Add SCSS and JS files if required' },
-              { id: '3', name: 'Stakeholder Meeting' },
-              { id: '4', name: 'Scoping & Estimations' },
-              { id: '5', name: 'Sprint Showcase' },
-            ]}
-          />
-        </Grid>
+   
       </Grid>
     </Container>
   );
