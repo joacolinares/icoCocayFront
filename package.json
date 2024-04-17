@@ -30,6 +30,7 @@
     "@thirdweb-dev/sdk": "^4.0.63",
     "apexcharts": "^3.43.0",
     "date-fns": "^2.30.0",
+    "eslint": "^8.57.0",
     "ethers": "5",
     "history": "^5.3.0",
     "lodash": "^4.17.21",
@@ -45,7 +46,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.4.0",
-    "eslint": "^8.51.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-alias": "^1.1.2",

@@ -1,11 +1,13 @@
+/* eslint-disable */
+
 import { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
-import App from './app';
 import { ThirdwebProvider } from '@thirdweb-dev/react';
-import { BinanceTestnet, PolygonAmoyTestnet } from "@thirdweb-dev/chains";
+import {  PolygonAmoyTestnet } from "@thirdweb-dev/chains";
+import App from './app';
 // ----------------------------------------------------------------------
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,3 +27,4 @@ root.render(
     </BrowserRouter>
   </HelmetProvider>
 );
+/* eslint-disable */

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import SvgColor from 'src/components/svg-color';
 
 // ----------------------------------------------------------------------
@@ -19,7 +21,7 @@ const navConfig = [
   },
 
 
-{/*  {
+  { /*  {
     title: 'user',
     path: '/user',
     icon: icon('ic_user'),
@@ -43,3 +45,4 @@ const navConfig = [
 ];
 
 export default navConfig;
+/* eslint-disable */

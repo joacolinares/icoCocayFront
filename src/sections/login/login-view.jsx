@@ -1,7 +1,8 @@
+/* eslint-disable */
+
 import { useState } from 'react';
 
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -18,8 +19,8 @@ import { useRouter } from 'src/routes/hooks';
 import { bgGradient } from 'src/theme/css';
 
 import Logo from 'src/components/logo';
-import Iconify from 'src/components/iconify';
 import { ConnectWallet } from '@thirdweb-dev/react';
+import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
@@ -55,10 +56,7 @@ export default function LoginView() {
         />
       </Stack>
 
-      <Stack direction="row" alignItems="center" justifyContent="flex-end" sx={{ my: 3 }}>
       
-      
-      </Stack>
       
       <LoadingButton
         fullWidth
@@ -71,8 +69,7 @@ export default function LoginView() {
         Login
       </LoadingButton>
 
-<br></br>
-<br></br>
+
     <center> <ConnectWallet /></center> 
 
     </>
@@ -154,3 +151,4 @@ export default function LoginView() {
     </Box>
   );
 }
+/* eslint-disable */

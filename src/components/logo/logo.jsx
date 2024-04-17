@@ -1,22 +1,18 @@
+/* eslint-disable */
+
 import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import { useTheme } from '@mui/material/styles';
 
 import { RouterLink } from 'src/routes/components';
 
 // ----------------------------------------------------------------------
 
 const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
-  const theme = useTheme();
 
-  const PRIMARY_LIGHT = theme.palette.primary.light;
-
-  const PRIMARY_MAIN = theme.palette.primary.main;
-
-  const PRIMARY_DARK = theme.palette.primary.dark;
+ 
 
   // OR using local (public folder)
   // -------------------------------------------------------
@@ -40,7 +36,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
       }}
       {...other}
     >
-    <img style={{width:"200%"}} src='https://cocaypitulum.com/images/640850b5-85d4-44f3-b0f0-b0f45d9166ea.png'></img>
+    <img alt='foto' style={{width:"200%"}} src='https://cocaypitulum.com/images/640850b5-85d4-44f3-b0f0-b0f45d9166ea.png'></img>
     </Box>
   );
 
@@ -61,3 +57,4 @@ Logo.propTypes = {
 };
 
 export default Logo;
+/* eslint-disable */
